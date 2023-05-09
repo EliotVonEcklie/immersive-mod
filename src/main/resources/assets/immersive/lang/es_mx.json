@@ -1,0 +1,11 @@
+{ 
+	"item.immersive.glock": "Glock",
+	"item.immersive.bullet_9mm": "Bala 9mm",
+	"item.immserive.security_faction_rank_reader_item": "Lector de Rango de Facción",
+	"item.immserive.security_identity_reader_item": "Scanner de Identidad",
+	
+	"block.immersive.security_faction_rank_reader": "Lector de Rango de Facción",
+	"block.immersive.security_identity_reader": "Scanner de Identidad",
+	
+	"entity.immersive.atv": "Cuatrimoto"
+}

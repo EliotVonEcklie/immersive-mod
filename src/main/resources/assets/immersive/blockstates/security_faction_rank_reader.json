@@ -1,0 +1,23 @@
+{
+    "variants": {
+        "facing=north,powered=true,configured=true": { "model": "immersive:block/security_faction_rank_reader" },
+        "facing=south,powered=true,configured=true": { "model": "immersive:block/security_faction_rank_reader", "y": 180 },
+        "facing=west,powered=true,configured=true":  { "model": "immersive:block/security_faction_rank_reader", "y": 270 },
+        "facing=east,powered=true,configured=true":  { "model": "immersive:block/security_faction_rank_reader", "y": 90 },
+
+        "facing=north,powered=false,configured=true": { "model": "immersive:block/security_faction_rank_reader" },
+        "facing=south,powered=false,configured=true": { "model": "immersive:block/security_faction_rank_reader", "y": 180 },
+        "facing=west,powered=false,configured=true":  { "model": "immersive:block/security_faction_rank_reader", "y": 270 },
+        "facing=east,powered=false,configured=true":  { "model": "immersive:block/security_faction_rank_reader", "y": 90 },
+        
+        "facing=north,powered=true,configured=false": { "model": "immersive:block/security_faction_rank_reader" },
+        "facing=south,powered=true,configured=false": { "model": "immersive:block/security_faction_rank_reader", "y": 180 },
+        "facing=west,powered=true,configured=false":  { "model": "immersive:block/security_faction_rank_reader", "y": 270 },
+        "facing=east,powered=true,configured=false":  { "model": "immersive:block/security_faction_rank_reader", "y": 90 },
+        
+        "facing=north,powered=false,configured=false": { "model": "immersive:block/security_faction_rank_reader" },
+        "facing=south,powered=false,configured=false": { "model": "immersive:block/security_faction_rank_reader", "y": 180 },
+        "facing=west,powered=false,configured=false":  { "model": "immersive:block/security_faction_rank_reader", "y": 270 },
+        "facing=east,powered=false,configured=false":  { "model": "immersive:block/security_faction_rank_reader", "y": 90 }
+    }
+}

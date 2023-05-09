@@ -1,0 +1,44 @@
+{
+	"schema_version": 1,
+	"quilt_loader": {
+		"group": "moe.eliotvonecklie",
+		"id": "immersive",
+		"version": "${version}",
+		"metadata": {
+			"name": "Immersive",
+			"description": "A short description of your mod.",
+			"contributors": {
+				"Joseph Diaz": "Owner"
+			},
+			"contact": {
+				"homepage": "https://example.com/",
+				"issues": "https://github.com/QuiltMC/quilt-template-mod/issues",
+				"sources": "https://github.com/QuiltMC/quilt-template-mod"
+			},
+			"icon": "assets/immersive/icon.png"
+		},
+		"intermediate_mappings": "net.fabricmc:intermediary",
+		"entrypoints": {
+			"init": "moe.eliotvonecklie.immersive.ImmersiveMod"
+		},
+		"depends": [
+			{
+				"id": "quilt_loader",
+				"versions": ">=0.18.3-"
+			},
+			{
+				"id": "quilted_fabric_api",
+				"versions": ">=6.0.0-"
+			},
+			{
+				"id": "minecraft",
+				"versions": ">=1.19.4"
+			},
+			{ 
+				"id": "factions",
+				"version": "=2.4.0"
+			}
+		]
+	},
+	"mixin": "immersive.mixins.json"
+}

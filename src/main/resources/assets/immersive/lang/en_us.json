@@ -1,0 +1,11 @@
+{ 
+	"item.immersive.glock": "Glock",
+	"item.immersive.bullet_9mm": "9mm bullet",
+	"item.immserive.security_faction_rank_reader_item": "Faction Rank Reader",
+	"item.immserive.security_identity_reader_item": "Identity Reader",
+	
+	"block.immersive.security_faction_rank_reader": "Faction Rank Reader",
+	"block.immersive.security_identity_reader": "Identity Reader",
+	
+	"entity.immersive.atv": "ATV"
+}
