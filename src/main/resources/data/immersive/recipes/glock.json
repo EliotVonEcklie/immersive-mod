@@ -1,0 +1,22 @@
+{ 
+	"type": "crafting_shaped",
+	"pattern": [
+		"   ",
+		"III",
+		"WT " 
+	],
+	"key": { 
+		"I": {
+			"item": "minecraft:iron_block"
+		},
+		"W": { 
+			"tag": "minecraft:planks"
+		},
+		"T": {
+			"item": "minecraft:tripwire_hook"
+		}
+	},
+	"result": {
+		"item": "immersive:glock"
+	}
+}

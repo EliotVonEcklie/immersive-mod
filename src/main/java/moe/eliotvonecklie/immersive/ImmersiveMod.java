@@ -17,6 +17,7 @@ public class ImmersiveMod implements ModInitializer {
 	@Override
 	public void onInitialize(ModContainer mod) {
 		MODID = mod.metadata().id();
+		
 		BlockRegistry.register();
 		BlockEntityRegistry.register();
 		ItemRegistry.register();

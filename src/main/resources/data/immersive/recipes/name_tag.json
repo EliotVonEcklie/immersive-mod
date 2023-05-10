@@ -1,0 +1,25 @@
+{ 
+	"type": "crafting_shaped",
+	"pattern": [
+		"PP ",
+		"IF~",
+		"PP " 
+	],
+	"key": { 
+		"~": { 
+			"item": "minecraft:lead"
+		},
+		"I": {
+			"item": "minecraft:item_frame"
+		},
+		"F": { 
+			"item": "minecraft:feather"
+		},
+		"P": { 
+			"item": "minecraft:paper"
+		}
+	},
+	"result": {
+		"item": "minecraft:name_tag"
+	}
+}
