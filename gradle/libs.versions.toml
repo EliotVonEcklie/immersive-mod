@@ -1,12 +1,12 @@
 [versions]
 # The latest versions are available at https://lambdaurora.dev/tools/import_quilt.html
+
 minecraft = "1.19.4"
 quilt_mappings = "1.19.4+build.10"
-quilt_loader = "0.18.10"
-
-quilted_fabric_api = "6.0.0-beta.5+0.78.0-1.19.4"
-
+quilt_loader = "0.19.0-beta.13"
+quilted_fabric_api = "6.0.0-beta.6+0.79.0-1.19.4"
 factions = "MatKE0VT"
+customportalapi = "0.0.1-beta63-1.19.4"
 
 [libraries]
 minecraft = { module = "com.mojang:minecraft", version.ref = "minecraft" }
@@ -17,6 +17,7 @@ quilted_fabric_api = { module = "org.quiltmc.quilted-fabric-api:quilted-fabric-a
 quilted_fabric_api_deprecated = { module = "org.quiltmc.quilted-fabric-api:quilted-fabric-api-deprecated", version.ref = "quilted_fabric_api" }
 
 factions = { module = "maven.modrinth:factions", version.ref = "factions" }
+customportalapi = { module = "net.kyrptonaught:customportalapi", version.ref = "customportalapi" }
 
 # If you have multiple similar dependencies, you can declare a dependency bundle and reference it on the build script with "libs.bundles.example".
 [bundles]

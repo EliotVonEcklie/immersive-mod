@@ -1,0 +1,11 @@
+{ 
+  "type": "immersive:moon_type",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": "immersive:moon_settings",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "immersive:moon_biome"
+    }
+  }
+}

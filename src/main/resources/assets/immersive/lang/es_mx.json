@@ -3,9 +3,15 @@
 	"item.immersive.bullet_9mm": "Bala 9mm",
 	"item.immserive.security_faction_rank_reader_item": "Lector de Rango de Facción",
 	"item.immserive.security_identity_reader_item": "Scanner de Identidad",
+	"item.immersive.moon_block_item": "Bloque Lunar",
+	"item.immersive.nuclear_fission_explosive_item": "Explosivo de Fisión Nuclear",	
+	"item.immersive.moon_rock": "Roca Lunar",
+	"item.immersive.powered_moon_rock": "Roca Lunar Poderosa",
 	
 	"block.immersive.security_faction_rank_reader": "Lector de Rango de Facción",
 	"block.immersive.security_identity_reader": "Scanner de Identidad",
+	"block.immersive.moon_block": "Bloque Lunar",
+	"block.immersive.nuclear_fission_explosive": "Explosivo de Fisión Nuclear",
 	
 	"entity.immersive.atv": "Cuatrimoto"
 }

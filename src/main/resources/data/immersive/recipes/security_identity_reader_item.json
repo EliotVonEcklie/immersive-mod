@@ -1,0 +1,25 @@
+{ 
+	"type": "crafting_shaped",
+	"pattern": [
+		"III",
+		"ROR" ,
+		"NNN"
+	],
+	"key": { 
+		"I": {
+			"item": "minecraft:iron_block"
+		},
+		"R": { 
+			"item": "minecraft:redstone_block"
+		},
+		"O": {
+			"item": "minecraft:observer"
+		},
+		"N": { 
+			"item": "minecraft:name_tag"
+		}
+	},
+	"result": {
+		"item": "immersive:security_identity_reader_item"
+	}
+}

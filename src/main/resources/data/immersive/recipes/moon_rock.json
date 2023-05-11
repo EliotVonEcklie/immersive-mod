@@ -1,0 +1,12 @@
+{
+  "type": "crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "immersive:moon_block_item"
+    }
+  ],
+  "result": {
+    "item": "immersive:moon_rock",
+    "count": 4
+  }
+}

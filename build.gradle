@@ -4,7 +4,7 @@ plugins {
 }
 
 archivesBaseName = project.archives_base_name
-version = "${project.version}+${libs.versions.minecraft.get()}"
+version = "${project.version}"
 group = project.maven_group
 
 repositories {
@@ -19,6 +19,10 @@ repositories {
             includeGroup "maven.modrinth"
         }
     }
+    
+    maven {
+    	url = "https://maven.kyrptonaught.dev"
+    }
 }
 
 dependencies {
@@ -28,6 +32,9 @@ dependencies {
 	modImplementation libs.quilted.fabric.api
 	// modImplementation libs.bundles.quilted.fabric.api // If you wish to use Fabric API's deprecated modules, you can replace the above line with this one	
 	modImplementation libs.factions
+	//include libs.factions
+	modImplementation libs.customportalapi
+	include libs.customportalapi
 }
 
 processResources {

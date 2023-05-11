@@ -1,0 +1,19 @@
+{
+  "type": "crafting_shaped",
+  "pattern": [
+    " N ",
+    "NMN",
+    " N "
+  ],
+  "key": {
+    "M": {
+      "item": "immersive:moon_rock"
+    },
+    "N": {
+      "item": "minecraft:nether_star"
+    }
+  },
+  "result": {
+    "item": "immersive:powered_moon_rock"
+  }
+}

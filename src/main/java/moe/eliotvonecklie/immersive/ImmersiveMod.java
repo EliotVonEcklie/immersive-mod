@@ -4,7 +4,9 @@ import org.quiltmc.loader.api.ModContainer;
 import org.quiltmc.qsl.base.api.entrypoint.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
+import net.kyrptonaught.customportalapi.api.CustomPortalBuilder;
+import net.minecraft.block.Blocks;
+import net.minecraft.util.Identifier;
 import moe.eliotvonecklie.immersive.registry.BlockEntityRegistry;
 import moe.eliotvonecklie.immersive.registry.BlockRegistry;
 import moe.eliotvonecklie.immersive.registry.EntityRegistry;
@@ -22,5 +24,13 @@ public class ImmersiveMod implements ModInitializer {
 		BlockEntityRegistry.register();
 		ItemRegistry.register();
 		EntityRegistry.init();
+		
+		//DimensionRegistry
+		CustomPortalBuilder.beginPortal()
+			.frameBlock(Blocks.QUARTZ_BLOCK)
+			.destDimID(new Identifier(MODID, "moon"))
+			.tintColor(255, 255, 255)
+			.onlyLightInOverworld()
+			.registerPortal();
 	}
 }
