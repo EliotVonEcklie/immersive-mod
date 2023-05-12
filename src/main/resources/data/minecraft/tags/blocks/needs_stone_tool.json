@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "immersive:security_identity_reader",
+    "immersive:security_faction_rank_reader"
+  ]
+}

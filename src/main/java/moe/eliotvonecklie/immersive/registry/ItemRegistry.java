@@ -20,7 +20,7 @@ public class ItemRegistry {
 		Registry.register(Registries.ITEM, new Identifier(ImmersiveMod.MODID, id), item);
 	}
 	
-	public static void register() {
+	public static void init() {
 		registerItem("glock", GLOCK);
 		registerItem("bullet_9mm", BULLET_9MM);
 		registerItem("moon_rock", MOON_ROCK);

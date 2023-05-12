@@ -1,12 +1,6 @@
 {
+  "replace": false,
   "values": [
-  	"immersive:moon_biome",
-    "minecraft:desert",
-    "minecraft:plains",
-    "minecraft:savanna",
-    "minecraft:snowy_plains",
-    "minecraft:taiga",
-    "#minecraft:is_mountain",
-    "minecraft:grove"
+  	"immersive:moon_biome"
   ]
 }

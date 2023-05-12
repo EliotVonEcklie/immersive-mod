@@ -10,6 +10,7 @@ import net.minecraft.util.Identifier;
 import moe.eliotvonecklie.immersive.registry.BlockEntityRegistry;
 import moe.eliotvonecklie.immersive.registry.BlockRegistry;
 import moe.eliotvonecklie.immersive.registry.EntityRegistry;
+import moe.eliotvonecklie.immersive.registry.ItemGroupRegistry;
 import moe.eliotvonecklie.immersive.registry.ItemRegistry;
 
 public class ImmersiveMod implements ModInitializer {
@@ -20,10 +21,11 @@ public class ImmersiveMod implements ModInitializer {
 	public void onInitialize(ModContainer mod) {
 		MODID = mod.metadata().id();
 		
-		BlockRegistry.register();
-		BlockEntityRegistry.register();
-		ItemRegistry.register();
+		BlockEntityRegistry.init();
+		BlockRegistry.init(); // ALWAYS REGISTER BLOCKS BEFORE ITEMGROUPS!!!
 		EntityRegistry.init();
+		ItemRegistry.init();
+		ItemGroupRegistry.init();
 		
 		//DimensionRegistry
 		CustomPortalBuilder.beginPortal()
