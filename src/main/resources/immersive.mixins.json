@@ -4,6 +4,7 @@
 	"package": "moe.eliotvonecklie.immersive.mixin",
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
+		"EnchantmentMixin"
 	],
 	"client": [
 	],

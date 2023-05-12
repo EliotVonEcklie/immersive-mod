@@ -1,0 +1,25 @@
+{ 
+	"type": "crafting_shaped",
+	"pattern": [
+		"III",
+		"ROR" ,
+		"BBB"
+	],
+	"key": { 
+		"I": {
+			"item": "minecraft:iron_block"
+		},
+		"R": { 
+			"item": "minecraft:redstone_block"
+		},
+		"O": {
+			"item": "minecraft:observer"
+		},
+		"B": { 
+			"tag": "minecraft:banners"
+		}
+	},
+	"result": {
+		"item": "immersive:security_faction_rank_reader_item"
+	}
+}

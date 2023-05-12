@@ -23,7 +23,7 @@ public class BlockEntityRegistry {
 			);
 	}
 
-	public static void register() {
+	public static void init() {
 		SECURITY_FACTION_RANK_READER_BLOCKENTITY = registerBlockEntity("security_faction_rank_reader", SecurityFactionRankReaderBlockEntity::new, BlockRegistry.SECURITY_FACTION_RANK_READER);
 		SECURITY_IDENTITY_READER_BLOCKENTITY = registerBlockEntity("security_identity_reader", SecurityIdentityReaderBlockEntity::new, BlockRegistry.SECURITY_IDENTITY_READER);
 	}

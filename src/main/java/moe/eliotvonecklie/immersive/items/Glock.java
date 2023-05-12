@@ -1,7 +1,8 @@
 package moe.eliotvonecklie.immersive.items;
 
 import java.util.function.Predicate;
-
+import org.joml.Quaternionf;
+import org.joml.Vector3f;
 import moe.eliotvonecklie.immersive.registry.ItemRegistry;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
@@ -16,6 +17,8 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
+import net.minecraft.util.UseAction;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
 public class Glock extends RangedWeaponItem {
@@ -41,30 +44,55 @@ public class Glock extends RangedWeaponItem {
 			
 			if (!world.isClient) {
 				ArrowItem arrowItem = (ArrowItem)(itemStack.getItem() instanceof ArrowItem ? itemStack.getItem() : Items.ARROW);
-				PersistentProjectileEntity persistentProjectileEntity = arrowItem.createArrow(world, itemStack, playerEntity);
-				persistentProjectileEntity.setProperties(playerEntity, playerEntity.getPitch(), playerEntity.getYaw(), 0.0F, 3.0F, 1.0F);
-				persistentProjectileEntity.setCritical(true);
+				
+				int l = EnchantmentHelper.getLevel(Enchantments.MULTISHOT, stack);
+				int l2 = l == 0 ? 1 : 3;
+				
+				for (int l3 = 0; l3 < l2; l3++) {
+					PersistentProjectileEntity persistentProjectileEntity = arrowItem.createArrow(world, itemStack, playerEntity);
+					
+					persistentProjectileEntity.setProperties(playerEntity, playerEntity.getPitch(), playerEntity.getYaw(), 0.0F, 3.0F, 1.0F);
+					persistentProjectileEntity.setCritical(true);
+					
+					int i = EnchantmentHelper.getLevel(Enchantments.PIERCING, stack);
+					if (i > 0) {
+						persistentProjectileEntity.setPierceLevel((byte)i);
+					}
 
-				int j = EnchantmentHelper.getLevel(Enchantments.POWER, stack);
-				if (j > 0) {
-					persistentProjectileEntity.setDamage(persistentProjectileEntity.getDamage() + (double)j * 0.5 + 0.5);
+					int j = EnchantmentHelper.getLevel(Enchantments.POWER, stack);
+					if (j > 0) {
+						persistentProjectileEntity.setDamage(persistentProjectileEntity.getDamage() + (double)j * 0.5 + 0.5);
+					}
+
+					int k = EnchantmentHelper.getLevel(Enchantments.PUNCH, stack);
+					if (k > 0) {
+						persistentProjectileEntity.setPunch(k);
+					}
+
+					if (EnchantmentHelper.getLevel(Enchantments.FLAME, stack) > 0) {
+						persistentProjectileEntity.setOnFireFor(100);
+					}
+
+					stack.damage(1, playerEntity, p -> p.sendToolBreakStatus(playerEntity.getActiveHand()));
+					if (bl2 || playerEntity.getAbilities().creativeMode) {
+						persistentProjectileEntity.pickupType = PersistentProjectileEntity.PickupPermission.CREATIVE_ONLY;
+					}
+					
+					Vec3d vec3d = playerEntity.getOppositeRotationVector(1.0F);
+					float simulated = switch(l3) {
+						default -> 0F;
+						case 1 -> -10F;
+						case 2 -> 10F;
+					};
+					
+					Quaternionf quaternionf = new Quaternionf().setAngleAxis((double)(simulated * (float) (Math.PI / 180.0)), vec3d.x, vec3d.y, vec3d.z);
+					Vec3d vec3d2 = playerEntity.getRotationVec(1.0F);
+					Vector3f vector3f = vec3d2.toVector3f().rotate(quaternionf);
+					
+					persistentProjectileEntity.setVelocity((double)vector3f.x(), (double)vector3f.y(), (double)vector3f.z(), 1.6F, 1.F);
+
+					world.spawnEntity(persistentProjectileEntity);
 				}
-
-				int k = EnchantmentHelper.getLevel(Enchantments.PUNCH, stack);
-				if (k > 0) {
-					persistentProjectileEntity.setPunch(k);
-				}
-
-				if (EnchantmentHelper.getLevel(Enchantments.FLAME, stack) > 0) {
-					persistentProjectileEntity.setOnFireFor(100);
-				}
-
-				stack.damage(1, playerEntity, p -> p.sendToolBreakStatus(playerEntity.getActiveHand()));
-				if (bl2 || playerEntity.getAbilities().creativeMode) {
-					persistentProjectileEntity.pickupType = PersistentProjectileEntity.PickupPermission.CREATIVE_ONLY;
-				}
-
-				world.spawnEntity(persistentProjectileEntity);
 			}
 
 			world.playSound(
@@ -88,10 +116,15 @@ public class Glock extends RangedWeaponItem {
 
 			playerEntity.incrementStat(Stats.USED.getOrCreateStat(this));
 			
-			return TypedActionResult.success(stack);
+			return TypedActionResult.consume(stack);
 		}
 
 		return TypedActionResult.fail(stack);
+	}
+	
+	@Override
+	public UseAction getUseAction(ItemStack stack) {
+		return UseAction.BOW;
 	}
 
 	@Override
